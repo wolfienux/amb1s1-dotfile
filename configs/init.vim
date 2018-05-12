@@ -20,58 +20,11 @@ Plug 'neomake/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cohama/agit.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-"HTML
-Plug 'gregsexton/MatchTag', { 'for': ['html', 'javascript'] }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript'] }
-Plug 'othree/html5.vim', { 'for': ['html', 'javascript'] }
-Plug 'tpope/vim-haml', { 'for': 'haml'}
-"CSS/LESS/Stylus/SCSS
-Plug 'ap/vim-css-color', { 'for': ['css', 'scss', 'sass', 'less', 'stylus'] }
-Plug 'cakebaker/scss-syntax.vim', { 'for': ['scss', 'sass'] }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'scss'] }
-Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 "Jade
 Plug 'digitaltoad/vim-jade', { 'for': ['jade', 'pug'] }
-"JavaScript
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
-Plug 'maksimr/vim-jsbeautify', { 'for': 'javascript' }
-Plug 'wizicer/vim-jison', { 'for': 'jison' }
-Plug 'posva/vim-vue', { 'for': ['javascript', 'typescript'] }
-"Go lang
-Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'nsf/gocode',  { 'for': 'go' }
-"Ruby
-Plug 'tpope/vim-bundler', { 'for': 'ruby' }
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 "Python
 Plug 'klen/python-mode', { 'for': 'python' }
 Plug 'mitsuhiko/vim-python-combined', { 'for': 'python' }
-"CoffeScript
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffescript' }
-"TypeScript
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'clausreinke/typescript-tools.vim', { 'do': 'npm install', 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript'}
-Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
-"Clojure and ClojureScript
-Plug 'tpope/vim-fireplace', { 'for': ['clojure', 'clojurescript'] }
-Plug 'guns/vim-clojure-static', { 'for': ['clojure', 'clojurescript'] }
-Plug 'guns/vim-clojure-highlight', { 'for': ['clojure', 'clojurescript'] }
-Plug 'vim-scripts/paredit.vim', { 'for': ['clojure', 'clojurescript'] }
-"Rust
-Plug 'wting/rust.vim', { 'for': 'rust' }
-"C / C++
-Plug 'Rip-Rip/clang_complete', { 'for': ['c', 'cpp'] }
-"PHP
-Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-"Haskell
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 "Elm
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 "CPP
@@ -98,7 +51,7 @@ set autoread
 syntax enable
 set t_Co=256
 
-colorscheme gruvbox
+colorscheme one
 set background=dark
 
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h14
@@ -203,31 +156,3 @@ let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 let g:pymode_lint_ignore="E501,W601,C0110"
 
-"Haskell settings
-let g:haskell_enable_quantification = 1
-let g:haskell_enable_recursivedo = 1
-let g:haskell_enable_arrowsyntax = 1
-let g:haskell_enable_pattern_synonyms = 1
-let g:haskell_enable_typeroles = 1
-let g:haskell_enable_static_pointers = 1
-
-"Golang
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go nmap <Leader>i <Plug>(go-info)
-"TypeScript
-au FileType typescript nmap <leader>g :TsuDefinition<cr>:TsuDefinition<cr>
-au FileType typescript nmap <leader>b :TsuGoBack<cr>
-let g:tsuquyomi_disable_quickfix = 1

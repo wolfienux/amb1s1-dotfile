@@ -6,9 +6,11 @@
 To install these dotfiles you should run the following command:
 
 ```
-make install-ansible && make install
+pip install ansible
+ansible-playbook -i "localhost," -c local -K playbooks/all.yml
 ```
-
+If any issue with not having pip3, you need to update python2.7 to python3
+`brew update python3`
 It'll install on your computer:
 
 - python
@@ -68,3 +70,4 @@ That's all. Remaining keys are default.
 Like that:
 
 ![](https://raw.githubusercontent.com/daynin/dotfiles/master/imgs/terminal-settings.png)
+
