@@ -32,6 +32,7 @@ Plug 'zchee/deoplete-clang', { 'for': ['cpp', 'cc', 'c'] }
 Plug 'tweekmonster/deoplete-clang2'
 Plug 'justmao945/vim-clang'
 "Themes
+Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
@@ -46,13 +47,17 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 call plug#end()
 
+colorscheme base16-default-dark
+
 " Settings
 set autoread
 syntax enable
 set t_Co=256
 
-colorscheme one
-set background=dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h14
 

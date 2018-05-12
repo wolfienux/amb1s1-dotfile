@@ -66,7 +66,10 @@ That's all. Remaining keys are default.
 ### Terminal emulator settings
 
 **NOTE:** You have to set "Droid Sans Mono for Powerline Nerd Font Complete.otf" as a font by default in your terminal emulator.
+'''
+cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 
+'''
 Like that:
 
 ![](https://raw.githubusercontent.com/daynin/dotfiles/master/imgs/terminal-settings.png)

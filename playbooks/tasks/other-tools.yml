@@ -14,6 +14,7 @@
 - name:  TASK04 - DELETING get-pip.py
   file: state=absent path=/tmp/get-pip.py
   when: is_pip.failed
+
 - name: Install python
   homebrew: name=python
 
