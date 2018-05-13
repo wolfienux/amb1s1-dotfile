@@ -3,17 +3,6 @@
   register: is_pip
   ignore_errors: yes
 
-- name: TASK02 - DOWNLOAD get-pip.py
-  get_url: url=https://bootstrap.pypa.io/get-pip.py  dest=/tmp
-  when: is_pip.failed
-
-- name: TASK03 - INSTALLING PIP
-  command: "python /tmp/get-pip.py"
-  when: is_pip.failed
-
-- name:  TASK04 - DELETING get-pip.py
-  file: state=absent path=/tmp/get-pip.py
-  when: is_pip.failed
 
 - name: Install python
   homebrew: name=python

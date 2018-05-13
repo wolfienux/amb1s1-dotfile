@@ -161,3 +161,12 @@ let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
 let g:pymode_lint_ignore="E501,W601,C0110"
 
+
+" Setting Presistent undo
+if has('persistent_undo')
+  if !isdirectory($HOME."/.vim_undo_dir")
+    call mkdir($HOME."/.vim_undo_dir", "", 0700)
+  endif
+  set undofile
+  set undodir=$HOME/vim_undo_dir
+endif
