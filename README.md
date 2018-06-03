@@ -7,6 +7,7 @@ To install these dotfiles you should run the following command:
 
 ```
 pip install ansible
+export PATH=$PATH:~/Library/Python/2.7/bin/
 ansible-playbook -i "localhost," -c local -K playbooks/all.yml
 ```
 If any issue with not having pip3, you need to update python2.7 to python3
