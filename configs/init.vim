@@ -1,11 +1,12 @@
 call plug#begin('~/.vim/plugged')
 "common
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'wakatime/vim-wakatime'
+Plug 'nvie/vim-flake8'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
@@ -20,17 +21,24 @@ Plug 'neomake/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cohama/agit.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'rizzatti/dash.vim'
+Plug 'tpope/vim-surround'
+Plug 'lepture/vim-jinja'
 "Jade
 Plug 'digitaltoad/vim-jade', { 'for': ['jade', 'pug'] }
 "Python
-Plug 'klen/python-mode', { 'for': 'python' }
+Plug 'python-mode/python-mode', { 'for': 'python' }
 Plug 'mitsuhiko/vim-python-combined', { 'for': 'python' }
 "Elm
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 "CPP
 Plug 'zchee/deoplete-clang', { 'for': ['cpp', 'cc', 'c'] }
+"PYTHON
+Plug 'zchee/deoplete-jedi'
 Plug 'tweekmonster/deoplete-clang2'
 Plug 'justmao945/vim-clang'
+"Ansible YAML
+Plug 'pearofducks/ansible-vim'
 "Themes
 Plug 'chriskempson/base16-vim'
 Plug 'altercation/vim-colors-solarized'
@@ -45,6 +53,7 @@ Plug 'rakr/vim-one'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 "TOML
 Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 colorscheme base16-default-dark
@@ -66,9 +75,10 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set number
+set relativenumber
 
-set nocursorline
-set nocursorcolumn
+set cursorline
+set cursorcolumn
 syntax sync minlines=256
 
 set wildmenu " enhanced command line completion
@@ -157,9 +167,22 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_virtualenv = 1
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore="E501,W601,C0110"
+let g:pymode_rope=0
+let g:pymode_folding = 0
+let g:pymode_options_max_line_length = 120
+"Flake8 Setting
+let g:flake8_show_in_gutter=1
+
+"Jinja setting
+au BufNewFile,BufRead *.j2 set ft=jinja
+"Folding
+let g:SimpylFold_docstring_preview = 0
+"ansible
+let g:ansible_options = {'ignore_blank_lines': 0}
+let g:ansible_unindent_after_newline = 1
+let g:ansible_attribute_highlight = "ob"
+let g:ansible_name_highlight = 'b'
+let g:ansible_extra_keywords_highlight = 1
 
 
 " Setting Presistent undo
@@ -169,4 +192,11 @@ if has('persistent_undo')
   endif
   set undofile
   set undodir=$HOME/vim_undo_dir
+endif
+
+" setting dictionary for autocompletion
+setlocal dictionary+=~/words
+
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif

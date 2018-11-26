@@ -5,8 +5,9 @@ neofetch
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-
+ZSH_THEME="avit"
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -53,7 +54,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
+export PATH="/Users/gomezd/Library/Python/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/Cellar:/usr/local/sbin/"
 export GOPATH=~/go
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -89,7 +90,10 @@ alias p="cd ~/Documents/projects"
 export CLICOLOR=1
 export TERM=xterm-256color
 alias vim='nvim'
-
+alias dans='docker run -v /Users/gomezd/repos/test_pyntc:/opt -it pyntc ansible-playbook'
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
