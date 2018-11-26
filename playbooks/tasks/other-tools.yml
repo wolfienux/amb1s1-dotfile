@@ -16,3 +16,9 @@
 - name: Install curl
   homebrew: name=curl
 
+- name: Install bat
+  homebrew: name=bat
+
+- name: Install black
+  homebrew: name=black
+
