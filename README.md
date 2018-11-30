@@ -49,6 +49,12 @@ These are my tmux, vim, neovim, editorconfig and zsh configs.
 
 There are only one thing you should know: you can use <kbd>Ctrl</kbd> + <kbd>h</kbd> / <kbd>j</kbd> / <kbd>k</kbd> / <kbd>l</kbd> to jump between panes
 
+
+For spliting screen:
+
+1. `CTRL+A \` for splitting Vertical 
+2. `CTRL+A -` for splitting Horizontal
+
 ### Vim hot keys
 
 First of all, you should know that my <kbd>Leader</kbd> key is <kbd>,</kbd>
