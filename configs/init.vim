@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 "common
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-Plug 'wakatime/vim-wakatime'
+Plug 'uarun/vim-protobuf'
 Plug 'nvie/vim-flake8'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
