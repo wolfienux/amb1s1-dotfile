@@ -11,7 +11,7 @@ export PATH=$PATH:~/Library/Python/2.7/bin/
 ansible-playbook -i "localhost," -c local -K playbooks/all.yml
 ```
 If any issue with not having pip3, you need to update python2.7 to python3
-`brew update python3`
+`brew upgrade python3`
 It'll install on your computer:
 
 - python
