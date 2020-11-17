@@ -1,5 +1,5 @@
 - homebrew_tap:
-    name: caskroom/fonts
+    name: homebrew/cask-fonts
     state: present
   ignore_errors: yes
 
